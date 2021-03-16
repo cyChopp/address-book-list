@@ -1,6 +1,7 @@
 import { Button, TextField } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import UsersList from "./usersList/UsersList";
+import './Search.scss'
 
 
 const Search = (props) => {
@@ -11,7 +12,7 @@ const Search = (props) => {
   }, [search]);
   return (
     <>
-      <form action='/' method='get' >
+      <form action='/' method='get' className='search'>
         <TextField
           onChange={(e) => setSearch(e.target.value)}
           value={search}
@@ -25,7 +26,7 @@ const Search = (props) => {
           Search
         </Button>
       </form>
-      <UsersList userInfo={props.userInfo} search={search} />
+      <UsersList  userInfo={props.userInfo} search={search} />
     </>
   );
 };

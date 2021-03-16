@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import "./UsersList.scss";
 
 const UsersList = (props) => {
-    console.log(props.userInfo,'props')
- // const [input,setInput]=useState(props.search.split(/\b(\s)/))
-//  console.log(props.search.split(/\b(\s)/),':::input')
-    return (
-        <div>
-            {props.userInfo !== '' &&
-            props.userInfo.map((user,key)=>(
-                <div key={key}>
-                    {user.name.first}{'  '}{ user.name.last}
-                </div>
-            ))
-            }
-        </div>
-    )
-}
+  return (
+    <div className="usersList">
+      {props.userInfo && props.userInfo
+        .filter((user) => user.name.first.concat(" ", user.name.last).includes(props.search))
+        .map((user,key) => (
+          <div key={key}>
+            {user.name.first} {user.name.last}
+          </div>
+        ))}
+    </div>
+  );
+};
 
-export default UsersList
+export default UsersList;
