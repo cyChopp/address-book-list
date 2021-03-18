@@ -2,6 +2,8 @@ import { Button, TextField } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import UsersList from "./usersList/UsersList";
 import './Search.scss'
+import { DriveEtaOutlined } from "@material-ui/icons";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Search = (props) => {
@@ -24,6 +26,10 @@ const Search = (props) => {
           fullWidth
         />
       </form>
+      <Link to="/settings">
+        <Button variant="contained" color="primary">Settings</Button>
+      </Link>
+
       <UsersList  userInfo={props.userInfo} search={search} />
     </>
   );
