@@ -12,8 +12,9 @@ const Search = (props) => {
   }, [search]);
   return (
     <>
-      <form action='/' method='get' className='search'>
+      <form className='search'>
         <TextField
+        className='textField'
           onChange={(e) => setSearch(e.target.value)}
           value={search}
           type="text"
@@ -22,9 +23,6 @@ const Search = (props) => {
           variant="outlined"
           fullWidth
         />
-        <Button type='submit' variant="contained" color='primary'>
-          Search
-        </Button>
       </form>
       <UsersList  userInfo={props.userInfo} search={search} />
     </>

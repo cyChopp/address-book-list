@@ -16,9 +16,9 @@ const List = () => {
   return (
     <div className="mainContainer">
       <Search userInfo={userInfo} />
-      <NavLink to="/settings">
+      {/* <NavLink to="/settings">
         <ChevronRightSharpIcon variant="contained" color="primary" />
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };
