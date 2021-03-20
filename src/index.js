@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import FilterContextProvider from './context/FilterProvider';
 
 ReactDOM.render(
     <Router>
-    <App/>
+      <FilterContextProvider>
+         <App/>
+      </FilterContextProvider>
     </Router>,
   document.getElementById('root')
 );
